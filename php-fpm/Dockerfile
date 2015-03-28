@@ -7,9 +7,14 @@ ENV TIMEZONE Europe/Paris
 
 RUN apt-get update
 
-RUN apt-get install -y php5-fpm php5-cli php5-curl php5-gd php5-json php5-sqlite \
-		       php5-pgsql php-pear php-apc php5-intl php5-mcrypt php5-mysqlnd \
+RUN apt-get install -y wget php5-fpm php5-cli php5-curl php5-gd php5-json php5-sqlite \
+		       php5-pgsql php-pear php5-intl php5-mcrypt php5-mysqlnd \
 		       php5-imagick php5-intl php5-xmlrpc php5-ldap 
+
+RUN cd /tmp
+RUN wget http://mirrors.kernel.org/ubuntu/pool/universe/p/php-apcu/php5-apcu_4.0.6-1_amd64.deb
+RUN dpkg -i php5-apcu_4.0.6-1_amd64.deb
+RUN rm php5-apcu_4.0.6-1_amd64.deb
 
 RUN sed -i '/daemonize /c daemonize = no' /etc/php5/fpm/php-fpm.conf
 RUN sed -i '/^ request_terminate_timeout /c request_terminate_timeout = 9000s' /etc/php5/fpm/pool.d/www.conf
