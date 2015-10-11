@@ -14,8 +14,8 @@ RUN apt-get install -y wget php5-fpm php5-cli php5-curl php5-gd php5-json php5-s
 
 RUN cd /tmp
 RUN wget http://mirrors.kernel.org/ubuntu/pool/universe/p/php-apcu/php5-apcu_4.0.7-1build1_amd64.deb
-RUN dpkg -i php5-apcu_4.0.6-1_amd64.deb
-RUN rm php5-apcu_4.0.6-1_amd64.deb
+RUN dpkg -i php5-apcu_4.0.7-1build1_amd64.deb
+RUN rm php5-apcu_4.0.7-1build1_amd64.deb
 
 RUN sed -i '/daemonize /c daemonize = no' /etc/php5/fpm/php-fpm.conf
 RUN sed -i '/^ request_terminate_timeout /c request_terminate_timeout = 9000s' /etc/php5/fpm/pool.d/www.conf
