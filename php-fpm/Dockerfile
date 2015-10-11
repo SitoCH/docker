@@ -1,4 +1,5 @@
-FROM ubuntu
+FROM ubuntu:14.04
+
 MAINTAINER Simone Grignola <sito@grignola.ch>
 
 ENV DEBIAN_FRONTEND noninteractive
