@@ -13,7 +13,7 @@ RUN apt-get install -y wget php5-fpm php5-cli php5-curl php5-gd php5-json php5-s
 		       php5-imagick php5-intl php5-xmlrpc php5-ldap php5-redis
 
 RUN cd /tmp
-RUN wget http://mirrors.kernel.org/ubuntu/pool/universe/p/php-apcu/php5-apcu_4.0.6-1_amd64.deb
+RUN wget http://mirrors.kernel.org/ubuntu/pool/universe/p/php-apcu/php5-apcu_4.0.7-1build1_amd64.deb
 RUN dpkg -i php5-apcu_4.0.6-1_amd64.deb
 RUN rm php5-apcu_4.0.6-1_amd64.deb
 
